@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <label>Ingrese No. de Cédula</label>
+  <input formControlName="cedula" placeholder="Ej: 8-123-456" />
+
+  <div *ngIf="(cedula.invalid && cedula.touched) || cedula.dirty">
+    <small *ngIf="cedula.hasError('required')">Cédula es requerida</small>
+    <small *ngIf="cedula.hasError('invalid')">Cédula es inválida</small>
+  </div>
+  <input formControlName="email" type="email" placeholder="" />
+  <button type="submit">Enviar</button>
+</form>
+<br />
+Is dirty: {{ form.dirty }} <br />
+Is errors: {{ form.errors }} <br />
+Is invalid: {{ form.invalid }} <br />
+Is pristine: {{ form.pristine }} <br />
+Is touched: {{ form.touched }} <br />
+Is untouched: {{ form.untouched }} <br />
+
+<hr />
+cedula válida:
+{{ cedula.hasError("invalid") | json }}
+<br />

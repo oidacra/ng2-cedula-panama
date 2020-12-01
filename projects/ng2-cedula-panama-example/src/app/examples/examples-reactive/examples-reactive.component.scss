@@ -1,0 +1,16 @@
+:host {
+  form {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 3px;
+    }
+    input {
+      margin-bottom: 3px;
+      &.ng-invalid.ng-touched {
+        border-color: red;
+      }
+    }
+  }
+}
