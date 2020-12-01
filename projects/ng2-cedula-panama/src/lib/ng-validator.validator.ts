@@ -4,10 +4,10 @@ const CEDULA_REGEX = /^(PE|E|N|[23456789](?:AV|PI)?|1[0123]?(?:AV|PI)?)-(\d{1,4}
 // @dynamic
 export class CedulaValidators {
   static validator(control: AbstractControl): ValidatorFn {
-    return (control: AbstractControl): { [key: string]: any } | null => {
-      const cedula: string = control.value ? control.value : '';
+    return (inputControl: AbstractControl): { [key: string]: any } | null => {
+      const cedula: string = inputControl.value ? inputControl.value : '';
 
-      if (control.pristine) {
+      if (inputControl.pristine) {
         return null;
       }
 
